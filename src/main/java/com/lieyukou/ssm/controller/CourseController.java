@@ -1,10 +1,12 @@
 package com.lieyukou.ssm.controller;
 
 
+import cn.dev33.satoken.annotation.SaCheckLogin;
 import com.lieyukou.ssm.bean.Course;
 
+import com.lieyukou.ssm.common.entity.Result;
 import com.lieyukou.ssm.mapper.CourseMapper;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,14 +28,15 @@ import java.util.List;
 @CrossOrigin
 public class CourseController {
 
-    @Autowired
+    @Resource
     CourseMapper courseMapper;
 
+    @SaCheckLogin
     @GetMapping("/all")
-    public List<Course> getAllCourse(){
+    public Result<List<Course>> getAllCourse(){
 
 
-        return courseMapper.selectList(null);
+        return Result.ok(courseMapper.selectList(null));
 
 
     }

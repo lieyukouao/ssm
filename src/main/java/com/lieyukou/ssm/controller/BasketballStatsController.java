@@ -1,7 +1,9 @@
 package com.lieyukou.ssm.controller;
 
 
+import cn.dev33.satoken.annotation.SaCheckLogin;
 import com.lieyukou.ssm.bean.NbaPlayer;
+import com.lieyukou.ssm.common.entity.Result;
 import com.lieyukou.ssm.service.BasketballStatsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -27,11 +29,10 @@ public class BasketballStatsController {
     @Autowired
     BasketballStatsService basketballStatsService;
 
+    @SaCheckLogin
     @GetMapping("/all")
-    public List<NbaPlayer> getAllBasketball(){
-        return basketballStatsService.getAllBasketball();
-
-
+    public Result<List<NbaPlayer>> getAllBasketball(){
+        return Result.ok(basketballStatsService.getAllBasketball());
     }
 }
 

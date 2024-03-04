@@ -1,7 +1,9 @@
 package com.lieyukou.ssm.controller;
 
 
+import cn.dev33.satoken.annotation.SaCheckLogin;
 import com.lieyukou.ssm.bean.NbaPlayer;
+import com.lieyukou.ssm.common.entity.Result;
 import com.lieyukou.ssm.mapper.NbaPlayerMapper;
 import com.lieyukou.ssm.service.NbaPlayerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,16 +32,18 @@ public class NbaPlayerController {
     @Autowired
     NbaPlayerMapper nbaPlayerMapper;
 
+    @SaCheckLogin
     @GetMapping("/rank")
-    public List<NbaPlayer> getAllNbaPlayerRank(){
-        return nbaPlayerService.getAllNbaPlayerRank();
+    public Result<List<NbaPlayer>> getAllNbaPlayerRank(){
+        return Result.ok(nbaPlayerService.getAllNbaPlayerRank());
 
 
     }
 
+    @SaCheckLogin
     @GetMapping("/a")
-    public NbaPlayer ceshi(){
-        return nbaPlayerMapper.getOneNbaPlayer();
+    public Result<NbaPlayer> ceshi(){
+        return Result.ok(nbaPlayerMapper.getOneNbaPlayer());
 
 
     }
