@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lieyukou.ssm.mapper.BasketballStatsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lieyukou.ssm.bean.BasketballStats">
+        <id column="id" property="id" />
+        <result column="ranks" property="ranks" />
+        <result column="team" property="team" />
+        <result column="field_goal_percentage" property="fieldGoalPercentage" />
+        <result column="field_goals_made" property="fieldGoalsMade" />
+        <result column="field_goals_attempted" property="fieldGoalsAttempted" />
+        <result column="three_point_percentage" property="threePointPercentage" />
+        <result column="three_point_made" property="threePointMade" />
+        <result column="three_point_attempted" property="threePointAttempted" />
+        <result column="free_throw_percentage" property="freeThrowPercentage" />
+        <result column="free_throws_made" property="freeThrowsMade" />
+        <result column="free_throws_attempted" property="freeThrowsAttempted" />
+        <result column="total_rebounds" property="totalRebounds" />
+        <result column="offensive_rebounds" property="offensiveRebounds" />
+        <result column="defensive_rebounds" property="defensiveRebounds" />
+        <result column="assists" property="assists" />
+        <result column="turnovers" property="turnovers" />
+        <result column="steals" property="steals" />
+        <result column="blocks" property="blocks" />
+        <result column="personal_fouls" property="personalFouls" />
+        <result column="points" property="points" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, ranks, team, field_goal_percentage, field_goals_made, field_goals_attempted, three_point_percentage, three_point_made, three_point_attempted, free_throw_percentage, free_throws_made, free_throws_attempted, total_rebounds, offensive_rebounds, defensive_rebounds, assists, turnovers, steals, blocks, personal_fouls, points
+    </sql>
+
+</mapper>

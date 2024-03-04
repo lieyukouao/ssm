@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lieyukou.ssm.mapper.CourseMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lieyukou.ssm.bean.Course">
+        <id column="id" property="id" />
+        <result column="race_date" property="raceDate" />
+        <result column="race_time" property="raceTime" />
+        <result column="visiting_team" property="visitingTeam" />
+        <result column="host_team" property="hostTeam" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, race_date, race_time, visiting_team, host_team
+    </sql>
+
+</mapper>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lieyukou.ssm.mapper.NbaPlayerMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lieyukou.ssm.bean.NbaPlayer">
+        <id column="id" property="id" />
+        <result column="ranks" property="ranks" />
+        <result column="player" property="player" />
+        <result column="team" property="team" />
+        <result column="score" property="score" />
+        <result column="hit_shot" property="hitShot" />
+        <result column="hit_rate" property="hitRate" />
+        <result column="hit_three" property="hitThree" />
+        <result column="three_rate" property="threeRate" />
+        <result column="hit_penalty" property="hitPenalty" />
+        <result column="penalty_rate" property="penaltyRate" />
+        <result column="session" property="session" />
+        <result column="playing_time" property="playingTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, ranks, player, team, score, hit_shot, hit_rate, hit_three, three_rate, hit_penalty, penalty_rate, session, playing_time
+    </sql>
+    <select id="getOneNbaPlayer" resultType="com.lieyukou.ssm.bean.NbaPlayer">
+        select * from nba_player where id = 1
+    </select>
+    <select id="getAllNbaPlayerRank" resultType="com.lieyukou.ssm.bean.NbaPlayer">
+        select * from nba_player 
+    </select>
+
+</mapper>
